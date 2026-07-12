@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>开心消消乐 - 复刻版</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-deco" aria-hidden="true"></div>
+
+  <div class="app">
+    <header class="title-bar">
+      <h1>开心消消乐</h1>
+      <span class="badge">复刻版</span>
+    </header>
+
+    <div class="top-hud">
+      <div class="card mini">
+        <div class="label">关卡</div>
+        <div class="value" id="level-num">1</div>
+      </div>
+      <div class="card mini">
+        <div class="label">步数</div>
+        <div class="value moves" id="moves">0</div>
+      </div>
+      <div class="card goal-card">
+        <div class="goal-icon" id="goal-icon">🎯</div>
+        <div class="goal-body">
+          <div class="label" id="goal-text">目标</div>
+          <div class="bar"><div id="goal-fill"></div></div>
+          <div class="goal-meta">
+            <span id="goal-prog">0/0</span>
+            <span class="stars" id="stars-slot">☆☆☆</span>
+          </div>
+        </div>
+      </div>
+      <div class="card mini score-card">
+        <div class="label">分数</div>
+        <div class="value score" id="score">0</div>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div class="combo-pill" id="combo"></div>
+      <button id="hint-btn" type="button" title="提示">提示 <span id="hint-left">3</span></button>
+      <button id="fx-btn" type="button" title="特效强度">舒适</button>
+      <button id="sound-btn" type="button" title="音效">音效</button>
+      <button id="music-btn" type="button" title="背景音乐">音乐</button>
+      <button id="restart" type="button">重开</button>
+    </div>
+
+    <div class="board-wrap">
+      <div id="combo-banner" class="combo-banner hidden"></div>
+      <canvas id="board" width="512" height="512"></canvas>
+    </div>
+
+    <p class="tip">拖动或点选相邻交换 · 4连直线 / 5连魔力鸟 / L·T炸弹 · 特殊糖可互相组合</p>
+  </div>
+
+  <!-- 开局目标：默认隐藏，进页即可玩 -->
+  <div id="start-overlay" class="overlay hidden">
+    <div class="panel start-panel">
+      <div class="panel-glow"></div>
+      <p class="eyebrow" id="start-level">第 1 关</p>
+      <h2>关卡目标</h2>
+      <div class="start-goal" id="start-goal">
+        <span class="big-icon" id="start-icon">🎯</span>
+        <p id="start-desc">达到 500 分</p>
+      </div>
+      <p class="start-moves">步数 <b id="start-moves">25</b></p>
+      <button id="start-btn" type="button">开始游戏</button>
+    </div>
+  </div>
+
+  <!-- 结算 -->
+  <div id="overlay" class="overlay hidden">
+    <div class="panel result-panel">
+      <div class="panel-glow"></div>
+      <h2 id="overlay-title">过关</h2>
+      <div class="result-stars" id="result-stars">★★★</div>
+      <p id="overlay-msg"></p>
+      <div class="panel-btns">
+        <button id="overlay-btn" type="button">下一关</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

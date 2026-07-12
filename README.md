@@ -4,13 +4,22 @@
 
 **仓库：** [github.com/akiteet/happy-match](https://github.com/akiteet/happy-match)
 
+## 在线试玩（GitHub Pages）
+
+**入口：** [https://akiteet.github.io/happy-match/](https://akiteet.github.io/happy-match/)
+
+手机/电脑浏览器直接打开即可，无需安装。
+
 ## 如何运行
 
 ```bash
-# 方式一：直接打开
+# 方式一：在线
+# 打开 https://akiteet.github.io/happy-match/
+
+# 方式二：本地直接打开
 # 双击 index.html，或用浏览器打开该文件
 
-# 方式二：本地静态服务（可选）
+# 方式三：本地静态服务（可选）
 npx serve .
 # 或 python -m http.server 8080
 ```
